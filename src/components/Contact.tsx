@@ -4,7 +4,6 @@ import { Button } from './Button';
 import { Mail, Send, AlertCircle } from 'lucide-react';
 
 export const Contact = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [hasStartedTyping, setHasStartedTyping] = useState(false);
 
     const handleInputChange = () => {

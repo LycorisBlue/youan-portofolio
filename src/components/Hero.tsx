@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Button } from './Button';
 import { Section } from './Section';
 
