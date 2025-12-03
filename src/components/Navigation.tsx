@@ -6,19 +6,33 @@ import { Button } from './Button';
 export const Navigation = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            const currentScrollY = window.scrollY;
+
+            // Determine visibility based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsVisible(false); // Scrolling down & past threshold -> Hide
+            } else {
+                setIsVisible(true); // Scrolling up or at top -> Show
+            }
+
+            // Determine background style
+            setIsScrolled(currentScrollY > 50);
+
+            setLastScrollY(currentScrollY);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     const navLinks = [
         { name: 'Accueil', href: '#home' },
-        { name: 'À Propos', href: '#about' },
+
         { name: 'Projets', href: '#projects' },
         { name: 'Contact', href: '#contact' },
     ];
@@ -26,7 +40,8 @@ export const Navigation = () => {
     return (
         <header
             className={clsx(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform',
+                isVisible ? 'translate-y-0' : '-translate-y-full',
                 isScrolled ? 'bg-white/80 backdrop-blur-md shadow-subtle py-4' : 'bg-transparent py-6'
             )}
         >
@@ -34,13 +49,13 @@ export const Navigation = () => {
                 <div className="flex justify-between items-center">
                     <a href="#" className="flex items-center gap-2 group">
                         <div className="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center font-serif font-bold text-xl group-hover:scale-105 transition-transform">
-                            FY
+                            YF
                         </div>
                         <span className={clsx(
                             "font-serif font-bold text-xl tracking-tight transition-colors",
                             isScrolled ? "text-primary" : "text-primary"
                         )}>
-                            Faizan Youan-Bi
+                            Youan Bi Franck
                         </span>
                     </a>
 
@@ -95,6 +110,6 @@ export const Navigation = () => {
                     </Button>
                 </nav>
             </div>
-        </header>
+        </header >
     );
 };

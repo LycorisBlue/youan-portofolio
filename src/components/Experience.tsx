@@ -4,18 +4,28 @@ import { clsx } from 'clsx';
 
 const experiences = [
     {
-        role: "Développeur Freelance Full Stack",
-        company: "Indépendant",
+        id: 1,
+        role: "Assistant Project Manager – Suivi & Pilotage",
+        company: "Freelance / Mission",
         period: "2023 - Présent",
-        description: "Conception et développement de solutions web et mobiles sur mesure pour des clients internationaux et locaux.",
-        tags: ["React", "Node.js", "IoT"]
+        description: "Pilotage de projets d'intégration ERP Dolibarr et développement de solutions web sur mesure (WordPress, React).",
+        tags: ["Dolibarr", "WordPress", "Gestion de Projet"]
     },
     {
-        role: "Développeur Web & Mobile",
-        company: "Simplon Côte d'Ivoire",
+        id: 2,
+        role: "Formation Développement Web & Mobile",
+        company: "Simplon",
         period: "2022 - 2023",
-        description: "Formation intensive et projets pratiques. Développement d'applications complètes en méthodologie Agile.",
-        tags: ["Laravel", "React Native", "Scrum"]
+        description: "Formation intensive en développement d'applications web et mobile. Apprentissage des méthodologies agiles.",
+        tags: ["React", "Node.js", "Agile"]
+    },
+    {
+        id: 3,
+        role: "Master en Géographie option Géomatique",
+        company: "Université",
+        period: "2020 - 2022",
+        description: "Spécialisation en systèmes d'information géographique (SIG) et analyse de données spatiales.",
+        tags: ["SIG", "Analyse de données", "Cartographie"]
     }
 ];
 

@@ -1,6 +1,6 @@
 
 import { Section } from './Section';
-import { Server, Smartphone, Globe, Cpu, Cloud } from 'lucide-react';
+import { Server, Smartphone, Cpu, Cloud } from 'lucide-react';
 
 export const Skills = () => {
     const skillGroups = [
@@ -10,24 +10,24 @@ export const Skills = () => {
             skills: ["PHP (Laravel)", "Node.js", "APIs REST/GraphQL", "Design Patterns", "Scalability"]
         },
         {
-            icon: <Smartphone className="w-8 h-8 text-accent-coral" />,
-            title: "Cross-Platform Mobile",
-            skills: ["React Native", "iOS/Android", "Performance", "Offline-first"]
+            title: "Backend & ERP",
+            icon: <Server size={32} />,
+            skills: ["PHP", "Laravel", "Dolibarr", "Node.js", "MySQL", "PostgreSQL"]
         },
         {
-            icon: <Globe className="w-8 h-8 text-accent-coral" />,
-            title: "Interactive Web",
-            skills: ["React", "TypeScript", "Animations", "Accessibility", "SEO"]
+            title: "Mobile & Web",
+            icon: <Smartphone size={32} />,
+            skills: ["React Native", "React.js", "JavaScript", "WordPress", "HTML/CSS"]
         },
         {
-            icon: <Cpu className="w-8 h-8 text-accent-coral" />,
             title: "IoT & Embedded",
-            skills: ["Arduino", "Raspberry Pi", "MQTT", "Sensors", "Real-time"]
+            icon: <Cpu size={32} />,
+            skills: ["Arduino", "Raspberry Pi", "MQTT"]
         },
         {
-            icon: <Cloud className="w-8 h-8 text-accent-coral" />,
             title: "DevOps & Cloud",
-            skills: ["Docker", "Heroku", "Vercel", "CI/CD", "Git Workflows"]
+            icon: <Cloud size={32} />,
+            skills: ["Terraform", "Kubernetes", "OpenStack", "Docker", "CI/CD"]
         }
     ];
 

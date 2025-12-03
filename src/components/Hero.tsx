@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Download } from 'lucide-react';
 import { Button } from './Button';
 import { Section } from './Section';
 
@@ -16,17 +16,16 @@ export const Hero = () => {
                 >
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/20 -ml-6 hidden md:block" />
 
-                    <h1 className="mb-6 text-balance">
-                        Développeur <span className="text-accent-coral">Full Stack</span>
-                        <br />
-                        <span className="text-3xl md:text-4xl text-neutral-softBlack/80 font-sans font-normal mt-2 block">
-                            Web • Mobile • IoT Solutions
-                        </span>
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary mb-6 leading-tight">
+                        Intégrateur & <br />
+                        <span className="text-accent-coral">Développeur ERP</span>
                     </h1>
 
-                    <p className="text-xl text-neutral-softBlack/70 mb-10 max-w-lg">
-                        Je crée des applications qui connectent idées et utilisateurs.
-                        Une approche centrée sur l'impact, pas juste le code.
+                    <p className="text-xl md:text-2xl text-neutral-softBlack/80 mb-8 max-w-xl leading-relaxed">
+                        Expert Dolibarr, Géomaticien & DevOps Junior.
+                        <span className="block mt-2 text-base text-neutral-softBlack/60">
+                            Transformant les données complexes en solutions simples.
+                        </span>
                     </p>
 
                     <div className="flex flex-wrap gap-4">
@@ -54,21 +53,42 @@ export const Hero = () => {
                             <span className="ml-2 text-xs text-white/40 font-mono">developer.tsx</span>
                         </div>
 
-                        <div className="font-mono text-sm leading-relaxed">
-                            <div className="text-accent-coral">const <span className="text-accent-gold">developer</span> = <span className="text-white">{'{'}</span></div>
-                            <div className="pl-4 text-white">name: <span className="text-secondary">'Faizan Youan-Bi'</span>,</div>
-                            <div className="pl-4 text-white">role: <span className="text-secondary">'Full Stack Engineer'</span>,</div>
-                            <div className="pl-4 text-white">location: <span className="text-secondary">'Abidjan, CI'</span>,</div>
-                            <div className="pl-4 text-white">skills: <span className="text-white">['React', 'Node', 'IoT']</span>,</div>
-                            <div className="pl-4 text-white">mission: <span className="text-secondary">'Solving real problems'</span></div>
-                            <div className="text-white">{'}'};</div>
-
-                            <div className="mt-4 flex items-center gap-2 text-white/60">
-                                <span className="text-accent-coral">➜</span>
-                                <span className="animate-pulse">_</span>
+                        <div className="space-y-3 font-mono text-sm md:text-base">
+                            <div className="flex gap-2">
+                                <span className="text-accent-coral">const</span>
+                                <span className="text-accent-gold">profile</span>
+                                <span className="text-white">=</span>
+                                <span className="text-white">{'{'}</span>
                             </div>
+                            <div className="pl-6 space-y-2">
+                                <div>
+                                    <span className="text-secondary">role:</span>
+                                    <span className="text-green-400"> 'Intégrateur ERP'</span>,
+                                </div>
+                                <div>
+                                    <span className="text-secondary">stack:</span>
+                                    <span className="text-white"> [</span>
+                                    <span className="text-green-400">'Dolibarr'</span>,
+                                    <span className="text-green-400"> 'React'</span>,
+                                    <span className="text-green-400"> 'PHP'</span>
+                                    <span className="text-white">]</span>,
+                                </div>
+                                <div>
+                                    <span className="text-secondary">location:</span>
+                                    <span className="text-green-400"> 'Abidjan, CI'</span>,
+                                </div>
+                                <div>
+                                    <span className="text-secondary">passion:</span>
+                                    <span className="text-green-400"> 'Géomatique & IoT'</span>
+                                </div>
+                            </div>
+                            <div className="text-white">{'}'}</div>
+                        </div>                 <div className="mt-4 flex items-center gap-2 text-white/60">
+                            <span className="text-accent-coral">➜</span>
+                            <span className="animate-pulse">_</span>
                         </div>
                     </div>
+
 
                     {/* Decorative elements */}
                     <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent-coral/10 rounded-full blur-3xl -z-10" />

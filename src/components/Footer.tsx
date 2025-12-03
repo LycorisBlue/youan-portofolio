@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Twitter, ArrowUp, Download } from 'lucide-react';
 import { Section } from './Section';
 
 export const Footer = () => {
@@ -19,14 +19,35 @@ export const Footer = () => {
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <a href="https://github.com/faizanyouanbi" target="_blank" rel="noopener noreferrer" className="text-neutral-softBlack hover:text-primary transition-colors">
-                            <Github size={20} />
+                        <a
+                            href="#"
+                            className="text-neutral-softBlack/40 hover:text-neutral-softBlack/60 transition-colors cursor-not-allowed"
+                            title="Coming Soon"
+                        >
+                            <Github size={24} />
                         </a>
-                        <a href="https://linkedin.com/in/faizan-youan-bi" target="_blank" rel="noopener noreferrer" className="text-neutral-softBlack hover:text-primary transition-colors">
-                            <Linkedin size={20} />
+                        <a
+                            href="https://www.linkedin.com/in/faizan-franck-stephane-wilfried-youan-bi-625420193"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-neutral-softBlack hover:text-primary transition-colors transform hover:scale-110"
+                        >
+                            <Linkedin size={24} />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-neutral-softBlack hover:text-primary transition-colors">
-                            <Twitter size={20} />
+                        <a
+                            href="#"
+                            className="text-neutral-softBlack/40 hover:text-neutral-softBlack/60 transition-colors cursor-not-allowed"
+                            title="Coming Soon"
+                        >
+                            <Twitter size={24} />
+                        </a>
+                        <a
+                            href="/cv.pdf"
+                            download
+                            className="flex items-center gap-2 text-neutral-softBlack hover:text-primary transition-colors font-medium ml-4"
+                        >
+                            <Download size={20} />
+                            <span className="hidden md:inline">CV</span>
                         </a>
                     </div>
 

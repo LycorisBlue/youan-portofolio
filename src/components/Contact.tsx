@@ -28,14 +28,12 @@ export const Contact = () => {
 
                     <div className="space-y-6 mb-10">
                         <div className="flex items-center gap-4">
-                            <div className="p-3 bg-neutral-offWhite rounded-full text-primary">
+                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                 <Mail size={24} />
                             </div>
                             <div>
-                                <div className="text-sm text-neutral-softBlack/60 font-medium">Email</div>
-                                <a href="mailto:faizan.youanbi@email.com" className="text-lg font-bold text-primary hover:text-accent-coral transition-colors">
-                                    faizan.youanbi@email.com
-                                </a>
+                                <p className="text-sm text-neutral-softBlack/60 font-medium">Email</p>
+                                <p className="text-lg font-bold text-primary">franckwilfreid@gmail.com</p>
                             </div>
                         </div>
                     </div>
