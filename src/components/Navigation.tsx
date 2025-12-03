@@ -87,8 +87,14 @@ export const Navigation = () => {
             </div>
 
             {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                />
+            )}
             <div className={clsx(
-                'fixed inset-0 bg-white z-40 md:hidden transition-transform duration-300 ease-in-out pt-24 px-6',
+                'fixed top-0 right-0 bottom-0 w-[80%] bg-white shadow-2xl z-50 md:hidden transition-transform duration-300 ease-in-out pt-24 px-6 overflow-y-auto',
                 isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}>
                 <nav className="flex flex-col gap-6">
@@ -96,7 +102,7 @@ export const Navigation = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-2xl font-serif font-bold text-primary"
+                            className="text-2xl font-serif font-bold text-primary hover:text-accent-coral transition-colors"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             {link.name}
