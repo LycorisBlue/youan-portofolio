@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { Button } from './Button';
 
 export const Navigation = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -59,62 +57,26 @@ export const Navigation = () => {
                         </span>
                     </a>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-8">
+                    {/* Navigation */}
+                    <nav className="flex items-center gap-4 md:gap-8">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-neutral-softBlack hover:text-accent-coral font-medium transition-colors relative group"
+                                className="text-sm md:text-base text-neutral-softBlack hover:text-accent-coral font-medium transition-colors relative group"
                             >
-                                {link.name}
+                                <span className="hidden md:inline">{link.name}</span>
+                                <span className="md:hidden">{link.name.charAt(0)}</span>
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-coral transition-all duration-300 group-hover:w-full" />
                             </a>
                         ))}
                         <Button variant="primary" size="sm" onClick={() => document.getElementById('contact')?.scrollIntoView()}>
-                            Discutons
+                            <span className="hidden md:inline">Discutons</span>
+                            <span className="md:hidden">•••</span>
                         </Button>
                     </nav>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="md:hidden p-2 text-neutral-softBlack"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
                 </div>
-            </div>
-
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div
-                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                />
-            )}
-            <div className={clsx(
-                'fixed top-0 right-0 bottom-0 w-[80%] bg-white shadow-2xl z-50 md:hidden transition-transform duration-300 ease-in-out pt-24 px-6 overflow-y-auto',
-                isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-            )}>
-                <nav className="flex flex-col gap-6">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="text-2xl font-serif font-bold text-primary hover:text-accent-coral transition-colors"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                    <Button variant="primary" size="lg" className="w-full mt-4" onClick={() => {
-                        setIsMobileMenuOpen(false);
-                        document.getElementById('contact')?.scrollIntoView();
-                    }}>
-                        Discutons
-                    </Button>
-                </nav>
             </div>
         </header >
     );
