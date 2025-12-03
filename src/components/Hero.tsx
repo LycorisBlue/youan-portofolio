@@ -17,12 +17,12 @@ export const Hero = () => {
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/20 -ml-6 hidden md:block" />
 
                     <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary mb-6 leading-tight">
-                        Intégrateur & <br />
-                        <span className="text-accent-coral">Développeur ERP</span>
+                        Développeur <br />
+                        <span className="text-accent-coral">Full Stack</span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-neutral-softBlack/80 mb-8 max-w-xl leading-relaxed">
-                        Expert Dolibarr, Géomaticien & DevOps Junior.
+                        Intégrateur & Développeur ERP, DevOps Junior, Géomaticien.
                         <span className="block mt-2 text-base text-neutral-softBlack/60">
                             Transformant les données complexes en solutions simples.
                         </span>
