@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Twitter, ArrowUp, Download } from 'lucide-react';
+import { Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
 import { Section } from './Section';
 
 export const Footer = () => {
@@ -12,9 +12,9 @@ export const Footer = () => {
             <Section className="py-12 md:py-16">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="flex flex-col items-center md:items-start gap-4">
-                        <span className="font-serif font-bold text-2xl text-primary">FY</span>
+                        <span className="font-serif font-bold text-2xl text-primary">Youan Bi Franck</span>
                         <p className="text-neutral-softBlack/60 text-sm">
-                            © {new Date().getFullYear()} Faizan Youan-Bi. All rights reserved.
+                            © {new Date().getFullYear()} Youan Bi Franck. Tous droits réservés.
                         </p>
                     </div>
 
@@ -40,14 +40,6 @@ export const Footer = () => {
                             title="Coming Soon"
                         >
                             <Twitter size={24} />
-                        </a>
-                        <a
-                            href="/cv.pdf"
-                            download
-                            className="flex items-center gap-2 text-neutral-softBlack hover:text-primary transition-colors font-medium ml-4"
-                        >
-                            <Download size={20} />
-                            <span className="hidden md:inline">CV</span>
                         </a>
                     </div>
 

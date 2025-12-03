@@ -19,7 +19,7 @@ export const About = () => {
         },
         {
             icon: TrendingUp,
-            title: "Expert ERP",
+            title: "Intégrateur ERP Dolibarr",
             subtitle: "Spécialiste Dolibarr",
             description: "Intégration et personnalisation de solutions ERP"
         }
