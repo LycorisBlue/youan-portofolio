@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { Section } from './Section';
 import { Button } from './Button';
-import { Mail, Send } from 'lucide-react';
+import { Mail, Send, AlertCircle } from 'lucide-react';
 
 export const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [hasStartedTyping, setHasStartedTyping] = useState(false);
+
+    const handleInputChange = () => {
+        if (!hasStartedTyping) {
+            setHasStartedTyping(true);
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setIsSubmitting(false);
-        alert("Message envoyé ! (Simulation)");
+        // Le formulaire ne peut pas être envoyé car le service mail est indisponible
+        return;
     };
 
     return (
@@ -56,6 +60,7 @@ export const Contact = () => {
                                     type="text"
                                     id="name"
                                     required
+                                    onChange={handleInputChange}
                                     className="w-full px-4 py-3 rounded-lg bg-neutral-offWhite border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-colors"
                                     placeholder="Votre nom"
                                 />
@@ -66,6 +71,7 @@ export const Contact = () => {
                                     type="email"
                                     id="email"
                                     required
+                                    onChange={handleInputChange}
                                     className="w-full px-4 py-3 rounded-lg bg-neutral-offWhite border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-colors"
                                     placeholder="votre@email.com"
                                 />
@@ -76,6 +82,7 @@ export const Contact = () => {
                             <label htmlFor="subject" className="text-sm font-medium text-neutral-softBlack">Sujet</label>
                             <select
                                 id="subject"
+                                onChange={handleInputChange}
                                 className="w-full px-4 py-3 rounded-lg bg-neutral-offWhite border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-colors"
                             >
                                 <option>Projet Web / Mobile</option>
@@ -91,6 +98,7 @@ export const Contact = () => {
                                 id="message"
                                 required
                                 rows={4}
+                                onChange={handleInputChange}
                                 className="w-full px-4 py-3 rounded-lg bg-neutral-offWhite border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-colors resize-none"
                                 placeholder="Dites-moi tout..."
                             />
@@ -98,13 +106,22 @@ export const Contact = () => {
 
                         <Button
                             type="submit"
-                            variant="primary"
+                            variant={hasStartedTyping ? "outline" : "primary"}
                             size="lg"
                             className="w-full gap-2"
-                            isLoading={isSubmitting}
+                            disabled={hasStartedTyping}
                         >
-                            Envoyer le message
-                            <Send size={18} />
+                            {hasStartedTyping ? (
+                                <>
+                                    Service mail indisponible
+                                    <AlertCircle size={18} />
+                                </>
+                            ) : (
+                                <>
+                                    Envoyer le message
+                                    <Send size={18} />
+                                </>
+                            )}
                         </Button>
                     </form>
                 </div>

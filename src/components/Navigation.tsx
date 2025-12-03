@@ -32,7 +32,7 @@ export const Navigation = () => {
 
     const navLinks = [
         { name: 'Accueil', href: '#home' },
-
+        { name: 'À Propos', href: '#about' },
         { name: 'Projets', href: '#projects' },
         { name: 'Contact', href: '#contact' },
     ];
